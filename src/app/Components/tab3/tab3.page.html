@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Episodios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Episodios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngFor="let episode of episodios">
+    <ion-grid>
+      <ion-row>
+        <!-- Columna Izquierda: Imagen, fecha y descripción -->
+        <ion-col size="6" size-md="5">
+          <img *ngIf="episode.image_url" [src]="episode.image_url" [alt]="episode.name" style="width: 60%; border-radius: 10px;" />
+          <ion-card-header>
+            <ion-card-title>{{ episode.name }}</ion-card-title>
+            <ion-card-subtitle>{{ episode.air_date }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Descripción:</strong> {{ episode.overview }}</p>
+          </ion-card-content>
+        </ion-col>
+
+        <!-- Columna Derecha: Personajes -->
+        <ion-col size="6" size-md="7">
+          <ion-row>
+            <ion-col *ngFor="let personaje of episode.personajes_episodio" size="auto">
+              <ion-avatar>
+                <img [src]="personaje.image" [alt]="personaje.name" />
+              </ion-avatar>
+              <ion-label>{{ personaje.name }}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Usuarios
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Usuarios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-personaje-list
+  [personajes]="personajes"
+  [titulo]="titulo1"
+  [subtitulo]="subtitulo1">
+  </app-personaje-list>
+
+
+
+
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!--
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Lista de usuarios</ion-label>
+    </ion-list-header>
+
+    
+
+    <ion-item *ngFor="let personaje of personajes"> 
+      <ion-avatar slot="start">
+        <img alt="Silhouette of a person's head" src={{personaje.image}} />
+      </ion-avatar>
+      <ion-label>{{personaje.name}} - {{personaje.species}} - {{personaje.status}}  </ion-label>
+    </ion-item>
+
+  </ion-list>
+-->
+
+<!--
+  <app-explore-container name="Usuarios page"></app-explore-container>
+-->
+</ion-content>

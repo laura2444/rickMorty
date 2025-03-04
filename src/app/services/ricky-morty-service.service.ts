@@ -26,6 +26,18 @@ export class RickyMortyServiceService {
     );
   }
 
+  geUnPersonaje(unId: number): any {
+    let url = `${URL_RM}/character/${unId}`;
+
+
+    return this.http.get(url, {}).pipe(
+      map((res: any) => {
+        console.log('PERSONAJE_RK', res);
+        return res;
+      })
+    );
+  }
+
   getEpisodios():any{
 
     let url = `${URL_RM}/episode`;
@@ -65,9 +77,17 @@ export class RickyMortyServiceService {
  
   }
 
+  getMasEpisodios(url: string): any {
+    return this.http.get(url, {}).pipe(
+      map((res: any) => {
+        console.log('EPISODES_RK', res);
+        return res;
+      })
+    );
+  }
 
 
-  
+
 
 }
   

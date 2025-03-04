@@ -1,10 +1,47 @@
-.custom-modal {
-    --width: 50%; /* Cambia el ancho del modal */
-    --height: 60%; /* Cambia la altura del modal */
-    --border-radius: 15px; /* Esquinas redondeadas */
-  }
-
-p{
-    padding: 30px;
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
+.custom-modal {
+  --width: 90%;
+  --max-width: 400px;
+  --border-radius: 15px;
+    
+}
+
+.center-button {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  width: auto; /* Ajusta el ancho al contenido */
+  min-width: 100px; /* Establece un ancho mínimo */
+  padding: 20px 40px; /* Ajusta el tamaño interno */
+}
+
+
+
+
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-description {
+  font-size: 14px;
+  margin-top: 15px;
+  padding: 0 10px;
+  text-align: justify;
+}
+
+ion-button {
+  margin-top: 15px;
+}

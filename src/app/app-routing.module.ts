@@ -13,7 +13,11 @@ const routes: Routes = [
   {
     path: 'tab5',
     loadChildren: () => import('./Components/page2/page2.module').then( m => m.Page2PageModule)
-  }
+  },
+  {
+    path: 'page3',
+    loadChildren: () => import('./Components/page3/page3.module').then( m => m.Page3PageModule)
+  },
 ];
 @NgModule({
   imports: [

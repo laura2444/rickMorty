@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-personaje-list',
@@ -12,7 +13,14 @@ export class PersonajeListComponent  implements OnInit {
   @Input() titulo: string = '';
   @Input() subtitulo: string = '';
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  verPersonaje(unIdPersonaje:number){
+    console.log("PERSONAJE",unIdPersonaje);
+    this.router.navigate(['/tabs/tab5',unIdPersonaje]);
+  } 
+
+
 
   ngOnInit() {}
 

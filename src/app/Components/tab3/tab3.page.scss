@@ -1,3 +1,36 @@
-ion-item{
-    --pading-start:0;
-}
+.episode-image {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;  // Centra la imagen en móvil
+  }
+  
+  .characters-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los personajes se acomoden solos */
+    justify-content: center; /* Centra los personajes en celular */
+    gap: 10px; /* Espacio entre personajes */
+    padding: 10px;
+    
+  }
+  
+  .character-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80px; /* Tamaño adecuado en móvil */
+  }
+  
+  ion-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  @media (min-width: 768px) {
+    .characters-container {
+      justify-content: flex-start; /* En pantallas grandes, alinear a la izquierda */
+    }
+  }
+  

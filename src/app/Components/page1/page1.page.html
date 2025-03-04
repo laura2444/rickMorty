@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Nosotros</ion-title>
+    <ion-title>Tareas</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-button (click)="isModalOpen = true">Tarea 1</ion-button>
+  <ion-button (click)="isModalOpen = true" class="center-button">Tarea 1</ion-button>
 
   <!--isOpen "cuando se abra" se trabaja con la variable isModalOpen que se manejara desde el typescript, y didDismiss "cuando se cierra" sedice que isModalOpen es falso-->
   <ion-modal [isOpen]="isModalOpen" (didDismiss)="isModalOpen=false" class="custom-modal">           

@@ -14,9 +14,9 @@
   <ion-card *ngFor="let episode of episodios">
     <ion-grid>
       <ion-row>
-        <!-- Columna Izquierda: Imagen, fecha y descripción -->
-        <ion-col size="6" size-md="5">
-          <img *ngIf="episode.image_url" [src]="episode.image_url" [alt]="episode.name" style="width: 60%; border-radius: 10px;" />
+        <!-- 📌 Columna Izquierda: Imagen, título y descripción -->
+        <ion-col size="12" size-md="6" class="episode-info">
+          <img *ngIf="episode.image_url" [src]="episode.image_url" [alt]="episode.name" class="episode-image" />
           <ion-card-header>
             <ion-card-title>{{ episode.name }}</ion-card-title>
             <ion-card-subtitle>{{ episode.air_date }}</ion-card-subtitle>
@@ -26,16 +26,25 @@
           </ion-card-content>
         </ion-col>
 
-        <!-- Columna Derecha: Personajes -->
-        <ion-col size="6" size-md="7">
-          <ion-row>
-            <ion-col *ngFor="let personaje of episode.personajes_episodio" size="auto">
+        <!-- 📌 Columna Derecha: Personajes (Responsive)
+        <ion-col size="12" size-md="6">
+          <div class="characters-container">
+            <div *ngFor="let personaje of episode.personajes_episodio" class="character-card">
               <ion-avatar>
                 <img [src]="personaje.image" [alt]="personaje.name" />
               </ion-avatar>
               <ion-label>{{ personaje.name }}</ion-label>
-            </ion-col>
-          </ion-row>
+            </div>
+          </div>
+        </ion-col>
+         -->
+
+        <ion-col size="12" size-md="6">
+          <app-personaje-list 
+            [personajes]="episode.personajes_episodio"
+            [titulo]="'Personajes del Episodio'"
+            [subtitulo]="episode.name">
+          </app-personaje-list>
         </ion-col>
       </ion-row>
     </ion-grid>

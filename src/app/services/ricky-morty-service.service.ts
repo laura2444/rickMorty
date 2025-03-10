@@ -8,8 +8,6 @@ import { map } from 'rxjs';
 })
 export class RickyMortyServiceService {
 
-    
-
   constructor(private http: HttpClient) { }
 
   getPersonajes():any{
